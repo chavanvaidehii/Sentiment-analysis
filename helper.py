@@ -175,7 +175,7 @@ def sentiment_analysis(selected_user, df):
     df = df.copy()
     df['sentiment'] = sentiments
     return df
-    def sentiment_analysis2(selected_user, df):
+def sentiment_analysis2(selected_user, df):
     if selected_user != 'Overall':
         df = df[df['user'] == selected_user]
 
