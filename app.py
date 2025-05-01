@@ -142,6 +142,14 @@ if uploaded_file is not None:
         fig, ax = plt.subplots()
         ax.pie(sentiment_counts, labels=sentiment_counts.index, autopct="%0.2f%%")
         st.pyplot(fig)
+        # Display scrollable table of messages with sentiments
+        st.subheader("📊 Message-wise Sentiment Classification")
+
+        st.dataframe(
+            sentiment_df,
+            height=400,  # You can adjust height as needed
+            use_container_width=True
+        )
 
         # Confusion Matrix and Accuracy
         from sklearn.metrics import confusion_matrix, accuracy_score
