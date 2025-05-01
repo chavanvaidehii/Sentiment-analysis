@@ -142,7 +142,10 @@ if uploaded_file is not None:
         fig, ax = plt.subplots()
         ax.pie(sentiment_counts, labels=sentiment_counts.index, autopct="%0.2f%%")
         st.pyplot(fig)
-        # Display scrollable table of messages with sentiments
+
+        sentiment_df = helper.sentiment_analysis2(selected_user, df)
+
+# Display scrollable table of messages with sentiments
         st.subheader("📊 Message-wise Sentiment Classification")
 
         st.dataframe(
