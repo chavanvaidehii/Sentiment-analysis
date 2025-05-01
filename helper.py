@@ -175,3 +175,21 @@ def sentiment_analysis(selected_user, df):
     df = df.copy()
     df['sentiment'] = sentiments
     return df
+    def sentiment_analysis2(selected_user, df):
+    if selected_user != 'Overall':
+        df = df[df['user'] == selected_user]
+
+    sentiments = []
+    for message in df['message']:
+        blob = TextBlob(message)
+        sentiment = blob.sentiment.polarity
+        if sentiment > 0:
+            sentiments.append("Positive")
+        elif sentiment < 0:
+            sentiments.append("Negative")
+        else:
+            sentiments.append("Neutral")
+
+    df = df.copy()
+    df['sentiment'] = sentiments
+    return df[['user', 'message', 'sentiment']]
