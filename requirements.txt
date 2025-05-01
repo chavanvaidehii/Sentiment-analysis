@@ -8,5 +8,6 @@ numpy
 emoji
 wordcloud
 TextBlob
+scikit-learn
 
 
