@@ -6,7 +6,6 @@ import seaborn as sns
 from sklearn.metrics import confusion_matrix, accuracy_score
 import numpy as np
 
-
 st.sidebar.title("Whatsapp Chat Analyzer")
 
 uploaded_file = st.sidebar.file_uploader("Choose a file")
